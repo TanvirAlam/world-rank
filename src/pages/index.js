@@ -2,11 +2,13 @@ import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import Layout from '../components/Layout/Layout';
+import SearchInput from '../components/SearchInput/SearchInput';
 
 export default function Home({countries}) {
   return (
       <Layout>
-        <div>Found {countries.length} countries</div>
+        <div className={styles.counts}>Found {countries.length} countries</div>
+        <SearchInput placeholder="Filter by name"/>
       </Layout>
   )
 }
