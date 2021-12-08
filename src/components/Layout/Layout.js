@@ -1,8 +1,29 @@
+import {useState, useEffect} from 'react';
 import Head from "next/head";
 import Link from "next/link";
 import styles from "./Layout.module.css";
+import {Brightness6Rounded} from "@material-ui/icons";
 
 const Layout = ({children, title = "World Ranks"}) => {
+  const [theme, setTheme] = useState("light");
+
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', localStorage.getItem("theme"));
+    setTheme(localStorage.getItem("theme"))
+  }, []);
+
+  const switchTheme = () => {
+    if (theme === 'light') {
+      setTheme("dark");
+      localStorage.setItem("theme", "dark");
+      document.documentElement.setAttribute('data-theme', 'dark');
+    } else {
+      setTheme("light");
+      localStorage.setItem("theme", "light");
+      document.documentElement.setAttribute('data-theme', 'light');
+    }
+  }
+
   return (
     <div className={styles.container}>
       <Head>
@@ -20,6 +41,10 @@ const Layout = ({children, title = "World Ranks"}) => {
             <rect y="4" width="7.33333" height="4.4" rx="2" fill="#21B6B7"/>
           </svg>
         </Link>
+
+        <button className={styles.themeSwitcher} onClick={switchTheme}>
+          <Brightness6Rounded />
+        </button>
       </header>
 
       <main className={styles.main}>
