@@ -73,7 +73,7 @@ const CountriesTable = ({countries}) => {
 
       {
         orderedCountries.map((country, index) => (
-          <Link href={`/country/${country.alpha3Code}`} key={index}>
+          <Link href={`/country/${country.alpha3Code}`} key={index} passHref>
             <div className={styles.row} key={index}>
               <div className={styles.name}>{country.name}</div>
               <div className={styles.population}>{country.population}</div>

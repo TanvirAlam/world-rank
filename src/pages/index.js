@@ -22,7 +22,7 @@ const [keyword, setKeyword] = useState("");
 
     setKeyword(e.target.value.toLowerCase());
   };
-
+console.log(countries);
   return (
       <Layout>
         <div className={styles.counts}>Found {countries.length} countries</div>
