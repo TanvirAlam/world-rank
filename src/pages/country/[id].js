@@ -22,8 +22,9 @@ const Country = ({country}) => {
   }, []);
 
   return <Layout title={country.name}>
-    <div>
-      <div className={styles.overview_panel}>
+    <div className={styles.container}>
+      <div className={styles.container_left}>
+        <div className={styles.overview_panel}>
         <img src={country.flag} alt={country.name}></img>
         <h1 className={styles.overview_name}>{country.name}</h1>
         <div className={styles.overview_region}>{country.region}</div>
@@ -38,8 +39,9 @@ const Country = ({country}) => {
           </div>
         </div>
       </div>
-
-      <div className={styles.details_panel}>
+      </div>
+      <div className={styles.container_right}>
+        <div className={styles.details_panel}>
         <h4 className={styles.details_panel_heading}>Details</h4>
         <div className={styles.details_panel_row}>
           <div className={styles.details_panel_label}>Capital</div>
@@ -74,6 +76,7 @@ const Country = ({country}) => {
             }
           </div>
         </div>
+      </div>
       </div>
     </div>
   </Layout>;
