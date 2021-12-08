@@ -22,11 +22,15 @@ const [keyword, setKeyword] = useState("");
 
     setKeyword(e.target.value.toLowerCase());
   };
-console.log(countries);
+
   return (
       <Layout>
-        <div className={styles.counts}>Found {countries.length} countries</div>
-        <SearchInput placeholder="Filter by name" onChange={onInputChange} />
+        <div className={styles.inputContainer}>
+          <div className={styles.counts}>Found {countries.length} countries</div>
+          <div className={styles.input}>
+            <SearchInput placeholder="Filter by name" onChange={onInputChange} />
+          </div>
+        </div>
         <CountriesTable countries={filterCountries} />
       </Layout>
   )

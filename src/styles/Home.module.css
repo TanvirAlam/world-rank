@@ -1,4 +1,24 @@
 .counts {
   margin: 12px 0;
-  color: var(--text-color-secondary)
+  color: var(--text-color-secondary);
+  margin-right: 2rem;
+}
+
+.inputContainer {
+  margin-bottom: 40px;;
+}
+
+@media screen and (min-width: 720px) {
+  .inputContainer {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .count {
+    flex: 1;
+  }
+
+  .input {
+    flex: 2;
+  }
 }
